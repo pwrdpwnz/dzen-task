@@ -2,9 +2,9 @@ import React from 'react';
 
 const ArrivalOfGoods:React.FC = () => {
     return (
-        <div>
-            
-        </div>
+        <main>
+            <h1>Hello</h1>
+        </main>
     );
 };
 

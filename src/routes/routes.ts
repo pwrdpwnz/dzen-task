@@ -1,10 +1,13 @@
-interface Route {
+
+
+interface routeList {
     id: number;
     to: string;
     name: string;
+
 }
 
-export const routes: Route[] = [
+export const routeList: routeList[] = [
     {
         id: 1,
         to: '/arrival-of-goods',
@@ -18,7 +21,7 @@ export const routes: Route[] = [
     {
         id: 3,
         to: '/products',
-        name: 'Products'
+        name: 'Products',
     },
     {
         id: 4,

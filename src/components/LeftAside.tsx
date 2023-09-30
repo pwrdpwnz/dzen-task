@@ -1,12 +1,24 @@
-import React from 'react';
-import {Container, Row, Col, Image, Nav, NavItem} from 'react-bootstrap';
+import React, { useState} from 'react';
+import {Col, Container, Image, Nav, NavItem, Row} from 'react-bootstrap';
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import gear from './../images/left-aside/gear.png'
-import {NavLink} from "react-router-dom";
-import {routes} from "../routes/routes.ts";
+import {NavLink, useLocation} from "react-router-dom";
+import {routeList} from "../routes/routes.ts";
 
 const LeftAside: React.FC = () => {
+    const location = useLocation();
+    const [showAnimation, setShowAnimation] = useState(false);
+    const [hidden, isHidden] = useState(false)
+
+    const handleClickHidden = () => {
+        isHidden(!hidden)
+    }
+
+
+
+
     return (
-        <aside className="aside">
+        <aside className={`aside ${hidden ? 'hidden-aside' : ''}`} onClick={handleClickHidden}>
             <Container fluid>
                 <Row className="justify-content-center">
                     <Col xs={3} className="text-center">
@@ -26,11 +38,29 @@ const LeftAside: React.FC = () => {
                 <Row className="justify-content-center">
                     <Col xs={12} className="text-center">
                         <Nav className="flex-column">
-                            {routes.map((route) => {
-                                return <NavItem id={route.id}>
-                                    <NavLink to={route.to}>{route.name}</NavLink>
-                                </NavItem>
-                            })}
+                            <TransitionGroup className="nav-list">
+                                {routeList.map((item) => (
+                                    <CSSTransition
+                                        key={item.id}
+                                        in={location.pathname === item.to && showAnimation}
+                                        timeout={500}
+                                        classNames="nav-item"
+                                        unmountOnExit
+                                    >
+                                        <NavItem>
+                                            <NavLink
+                                                to={item.to}
+                                                onClick={() => {
+                                                    setShowAnimation(true);
+                                                    setTimeout(() => setShowAnimation(false), 500);
+                                                }}
+                                            >
+                                                {item.name}
+                                            </NavLink>
+                                        </NavItem>
+                                    </CSSTransition>
+                                ))}
+                            </TransitionGroup>
                         </Nav>
                     </Col>
                 </Row>

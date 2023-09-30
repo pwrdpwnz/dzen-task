@@ -4,23 +4,28 @@ import './styles/index.scss'
 import Header from "./components/Header.tsx";
 import LeftAside from "./components/LeftAside.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {routes} from "./routes/routes.ts";
+import ArrivalOfGoods from "./pages/ArrivalOfGoods.tsx";
 
 const App: React.FC = () => {
 
 
+    // @ts-ignore
     return (
         <>
             <BrowserRouter>
                 <Header/>
-                <LeftAside/>
-                <Routes>
-                    {
-                        routes.map((route)=> {
-                            return <Route path={route.to} id={route.id} element={route.to} />
-                        })
-                    }
-                </Routes>
+                <div style={{display: 'flex', justifyContent: "space-between"}}>
+                    <LeftAside/>
+
+                    <Routes>
+                        <Route path="/arrival-of-goods" element={<ArrivalOfGoods/>}/>
+                        <Route path="/groups" element={<ArrivalOfGoods/>}/>
+                        <Route path="/products" element={<ArrivalOfGoods/>}/>
+                        <Route path="/users" element={<ArrivalOfGoods/>}/>
+                        <Route path="/settings" element={<ArrivalOfGoods/>}/>
+                    </Routes>
+                </div>
+
             </BrowserRouter>
         </>
     )

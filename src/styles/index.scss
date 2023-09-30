@@ -1,3 +1,15 @@
+.hidden-aside {
+  width: 10% !important;
+
+  & img {
+    display: none;
+  }
+
+  & .gear-icon {
+    display: none;
+  }
+}
+
 .navbar__form {
   display: flex;
 }
@@ -7,6 +19,7 @@
   height: calc(100vh - 56px);
   background-color: #f8f9fa;
   padding: 20px;
+  cursor: pointer;
 
   .image-container {
     position: relative;
@@ -43,4 +56,40 @@
       color: #333;
     }
   }
+}
+
+
+/* animation on router */
+
+.nav-item-enter {
+  background-color: yellow; /* Измените цвет фона при входе */
+  opacity: 0.5; /* Измените прозрачность при входе */
+}
+
+.nav-item-enter-active {
+  background-color: white; /* Измените цвет фона при активном состоянии */
+  opacity: 1; /* Измените прозрачность при активном состоянии */
+  transition: background-color 500ms, opacity 500ms; /* Установите желаемое время анимации */
+}
+
+.nav-item-exit {
+  background-color: white; /* Измените цвет фона при выходе */
+  opacity: 1; /* Измените прозрачность при выходе */
+}
+
+.nav-item-exit-active {
+  background-color: yellow; /* Измените цвет фона при активном состоянии выхода */
+  opacity: 0.5; /* Измените прозрачность при активном состоянии выхода */
+  transition: background-color 500ms, opacity 500ms; /* Установите желаемое время анимации */
+}
+
+
+
+
+/* animation on router */
+
+
+main {
+  width: 80%;
+  padding: 20px;
 }
