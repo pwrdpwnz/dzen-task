@@ -25,19 +25,19 @@ const LeftAside: React.FC = () => {
                     <Col xs={12} className="text-center">
                         <Nav className="flex-column">
                             <Nav.Item>
-                                <Nav.Link href="#">Приход</Nav.Link>
+                                <Nav.Link href="#">Arrival of goods</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="#">Группы</Nav.Link>
+                                <Nav.Link href="#">Groups</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="#">Продукты</Nav.Link>
+                                <Nav.Link href="#">Products</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="#">Пользователи</Nav.Link>
+                                <Nav.Link href="#">Users</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="#">Настройки</Nav.Link>
+                                <Nav.Link href="#">Settings</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
