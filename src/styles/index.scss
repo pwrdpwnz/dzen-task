@@ -1,14 +1,4 @@
-.hidden-aside {
-  width: 10% !important;
 
-  & img {
-    display: none;
-  }
-
-  & .gear-icon {
-    display: none;
-  }
-}
 
 .navbar__form {
   display: flex;
@@ -55,6 +45,18 @@
     .nav-link {
       color: #333;
     }
+  }
+}
+
+.hidden-aside {
+  width: 10%;
+
+  & img {
+    display: none;
+  }
+
+  & .gear-icon {
+    display: none;
   }
 }
 
