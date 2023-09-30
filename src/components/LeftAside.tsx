@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Row, Col, Image, Nav } from 'react-bootstrap';
+import {Container, Row, Col, Image, Nav, NavItem} from 'react-bootstrap';
 import gear from './../images/left-aside/gear.png'
+import {NavLink} from "react-router-dom";
+import {routes} from "../routes/routes.ts";
 
 const LeftAside: React.FC = () => {
     return (
@@ -24,21 +26,11 @@ const LeftAside: React.FC = () => {
                 <Row className="justify-content-center">
                     <Col xs={12} className="text-center">
                         <Nav className="flex-column">
-                            <Nav.Item>
-                                <Nav.Link href="#">Arrival of goods</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="#">Groups</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="#">Products</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="#">Users</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="#">Settings</Nav.Link>
-                            </Nav.Item>
+                            {routes.map((route) => {
+                                return <NavItem id={route.id}>
+                                    <NavLink to={route.to}>{route.name}</NavLink>
+                                </NavItem>
+                            })}
                         </Nav>
                     </Col>
                 </Row>
